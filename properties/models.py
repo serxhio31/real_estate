@@ -33,8 +33,14 @@ class Property(models.Model):
     floor = models.IntegerField(verbose_name="Property floor",null=True,blank=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,on_delete=models.CASCADE,null=False,blank=False)
 
+#this changes the name of the table/class
+    class Meta:
+        db_table = 'property'
 
 
 class City(models.Model):
     name=models.CharField(max_length=15,unique=True, null=False,blank=False)
+
+    class Meta:
+        db_table = 'city'
 
